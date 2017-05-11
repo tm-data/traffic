@@ -1,0 +1,49 @@
+{
+  "mappings": {
+    "traffic_measure": {
+      "properties": {
+        "unieke_id": { "type": "keyword" },
+        "beschrijvende_id": { "type": "keyword" },
+        "lve_nr": { "type": "integer" },
+        "tijd_waarneming": { "type": "date" },
+        "tijd_laatst_gewijzigd": { "type": "date" },
+        "actueel_publicatie": { "type": "boolean" },
+        "beschikbaar": { "type": "boolean" },
+        "defect": { "type": "byte" },
+        "geldig": { "type": "byte" },
+        "meetdata": {
+          "type": "nested",
+          "properties": {
+            "klasse_id": { "type": "short" },
+            "verkeersintensiteit":{ "type": "integer" },
+            "voertuigsnelheid_rekenkundig":{ "type": "short" },
+            "voertuigsnelheid_harmonisch":{ "type": "short" }
+          }
+        },
+        "rekendata":{
+          "type": "nested",
+          "properties": {
+            "bezettingsgraad": { "type": "integer" },
+            "beschikbaarheidsgraad": { "type": "integer" },
+            "onrustigheid": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "traffic_sensor": {
+      "properties": {
+        "unieke_id": { "type": "keyword" },
+        "beschrijvende_id": { "type": "keyword" },
+        "volledige_naam": { "type": "text" },
+        "Ident_8": { "type": "keyword" },
+        "lve_nr": { "type": "integer" },
+        "Kmp_Rsys": { "type": "float" },
+        "Rijstrook": { "type": "keyword" },
+        "X_coord_EPSG_31370": { "type": "double" },
+        "Y_coord_EPSG_31370": { "type": "double" },
+        "lengtegraad_EPSG_4326": { "type": "double" },
+        "breedtegraad_EPSG_4326": { "type": "double" }
+      }
+    }
+  }
+}
